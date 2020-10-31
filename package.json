@@ -1,0 +1,25 @@
+{
+  "name": "encrypt",
+  "version": "1.0.0",
+  "description": "encriptacion",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/javibishop/encrypt.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/javibishop/encrypt/issues"
+  },
+  "homepage": "https://github.com/javibishop/encrypt#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "body-parser": "^1.19.0",
+    "crypto-js": "^4.0.0",
+    "express": "^4.17.1"
+  }
+}
