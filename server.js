@@ -20,15 +20,18 @@ app.post('/encriptar', (req, res, next) =>{
         const clave = req.body.keyx || '123456$#@$^@1ERF';
         const key = CryptoJS.enc.Utf8.parse(clave);
         const iv = CryptoJS.enc.Utf8.parse(clave);
-        const encrypted = CryptoJS.AES.encrypt(CryptoJS.enc.Utf8.parse(pass.toString()), key,
-        {
+        const config = {
             keySize: 128 / 8,
             iv: iv,
             mode: CryptoJS.mode.CBC,
             padding: CryptoJS.pad.Pkcs7
-        });
-
-        res.send(encrypted.toString());
+        };
+        const encrypted = CryptoJS.AES.encrypt(CryptoJS.enc.Utf8.parse(pass.toString()), key, config);
+        const encrip = encrypted.toString();
+        const decriptedString = CryptoJS.AES.decrypt(encrip, key, config).toString(CryptoJS.enc.Utf8);
+        //const deencrypted = CryptoJS.AES.decrypt(encrip, key, config);
+        //let comp = bcrypt.compareSync(pass, r2);
+        res.send({encrip, decriptedString});
     }else {
         const numero = req.body.numero || 10;
         const encript = bcrypt.hashSync(pass, numero);
