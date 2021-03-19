@@ -1,0 +1,9 @@
+instalar el paquete: npm install --save-dev jasmin
+init proyecto test jasmine: npx jasmine init
+en package.json:
+    "scripts": {
+        "test": "jasmine"
+    },
+Crear un archivo dentro de spec del formato : xxxxxSpec.js
+
+expect:   // https://devhints.io/jasmine
