@@ -4,7 +4,8 @@
   "description": "encriptacion",
   "main": "index.js",
   "scripts": {
-    "test": "jasmine"
+    "test": "jasmine",
+    "build": "node server.js"
   },
   "repository": {
     "type": "git",
