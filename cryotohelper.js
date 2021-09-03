@@ -26,6 +26,13 @@ desEncriptarCryptoJS = (password, claveDcript) => {
     return decrypted.toString();
 }
 
+encriptarSalt = (clave) => {
+    const salt = bcrypt.genSaltSync();
+    let password = bcrypt.hashSync( clave, salt );
+    return password.toString();
+}
+
 module.exports.encriptarCryptoJS = encriptarCryptoJS;
 module.exports.encriptarBCrypt = encriptarBCrypt;
 module.exports.desEncriptarCryptoJS = desEncriptarCryptoJS;
+module.exports.encriptarSalt = encriptarSalt;

@@ -47,6 +47,12 @@ app.post('/desencriptar', (req, res, next) =>{
     }
 });
 
+app.get('/generarClave', (req, res, next) =>{
+    const password = req.body.pass;
+    let result = cripto.encriptarSalt(password);
+    res.send(result);
+});
+
 app.listen(`${port}`, () =>{
     console.log(`escuchando peticiones en el puerto ${port}`);
 });
